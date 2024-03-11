@@ -55,7 +55,7 @@ void Highlighter::setupFormats()
     d_formats.insert(parsing::HiglightingMarker::Kind::STRING_LITERAL, stringLiteralFormat);
 
     QTextCharFormat numberLiteralFormat;
-    numberLiteralFormat.setForeground(QColor(0xeb, 0xbc, 0xba));
+    numberLiteralFormat.setForeground(QColor(0xc4, 0xa7, 0xe7));
     d_formats.insert(parsing::HiglightingMarker::Kind::NUMBER_LITERAL, numberLiteralFormat);
 
     QTextCharFormat escapeFormat;
@@ -102,7 +102,7 @@ void Highlighter::setupFormats()
     d_formats.insert(parsing::HiglightingMarker::Kind::VARIABLE_NAME, variableNameFormat);
 
     QTextCharFormat functionNameFormat;
-    functionNameFormat.setForeground(QColor(0xeb, 0xbc, 0xba));
+    functionNameFormat.setForeground(QColor(0x9c, 0xcf, 0xd8));
     d_formats.insert(parsing::HiglightingMarker::Kind::FUNCTION_NAME, functionNameFormat);
 
     QTextCharFormat keywordFormat;
