@@ -81,7 +81,7 @@ signals:
 
 private:
     QWidget* d_leftLineNumberGutter;
-    QWidget* d_rightLineNumberGutter;
+    // QWidget* d_rightLineNumberGutter;
 
     QTimer* d_debounceTimer;
     Highlighter* d_highlighter;

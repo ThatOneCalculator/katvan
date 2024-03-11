@@ -47,24 +47,24 @@ Highlighter::Highlighter(QTextDocument* document, SpellChecker* spellChecker)
 void Highlighter::setupFormats()
 {
     QTextCharFormat commentFormat;
-    commentFormat.setForeground(QColor(0x8a, 0x8a, 0x8a));
+    commentFormat.setForeground(QColor(0x6e, 0x6a, 0x86));
     d_formats.insert(parsing::HiglightingMarker::Kind::COMMENT, commentFormat);
 
     QTextCharFormat stringLiteralFormat;
-    stringLiteralFormat.setForeground(QColor(0x29, 0x8e, 0x0d));
+    stringLiteralFormat.setForeground(QColor(0xf6, 0xc1, 0x77));
     d_formats.insert(parsing::HiglightingMarker::Kind::STRING_LITERAL, stringLiteralFormat);
 
     QTextCharFormat numberLiteralFormat;
-    numberLiteralFormat.setForeground(QColor(0xb6, 0x01, 0x57));
+    numberLiteralFormat.setForeground(QColor(0xeb, 0xbc, 0xba));
     d_formats.insert(parsing::HiglightingMarker::Kind::NUMBER_LITERAL, numberLiteralFormat);
 
     QTextCharFormat escapeFormat;
-    escapeFormat.setForeground(QColor(0x1d, 0x6c, 0x76));
+    escapeFormat.setForeground(QColor(0xeb, 0x6f, 0x92));
     d_formats.insert(parsing::HiglightingMarker::Kind::ESCAPE, escapeFormat);
     d_formats.insert(parsing::HiglightingMarker::Kind::MATH_OPERATOR, escapeFormat);
 
     QTextCharFormat mathDelimiterFormat;
-    mathDelimiterFormat.setForeground(QColor(0x29, 0x8e, 0x0d));
+    mathDelimiterFormat.setForeground(QColor(0xeb, 0xbc, 0xba));
     d_formats.insert(parsing::HiglightingMarker::Kind::MATH_DELIMITER, mathDelimiterFormat);
 
     QTextCharFormat headingFormat;
@@ -81,16 +81,16 @@ void Highlighter::setupFormats()
     d_formats.insert(parsing::HiglightingMarker::Kind::STRONG_EMPHASIS, strongEmphasisFormat);
 
     QTextCharFormat rawFormat;
-    rawFormat.setForeground(QColor(0x81, 0x81, 0x81));
+    rawFormat.setForeground(QColor(0x90, 0x8c, 0xaa));
     d_formats.insert(parsing::HiglightingMarker::Kind::RAW, rawFormat);
 
     QTextCharFormat labelAndReferenceFormat;
-    labelAndReferenceFormat.setForeground(QColor(0x1d, 0x6c, 0x76));
+    labelAndReferenceFormat.setForeground(QColor(0x90, 0x8c, 0xaa));
     d_formats.insert(parsing::HiglightingMarker::Kind::LABEL, labelAndReferenceFormat);
     d_formats.insert(parsing::HiglightingMarker::Kind::REFERENCE, labelAndReferenceFormat);
 
     QTextCharFormat listEntryFormat;
-    listEntryFormat.setForeground(QColor(0x8b, 0x41, 0xb1));
+    listEntryFormat.setForeground(QColor(0x90, 0x8c, 0xaa));
     d_formats.insert(parsing::HiglightingMarker::Kind::LIST_ENTRY, listEntryFormat);
 
     QTextCharFormat termFormat;
@@ -98,15 +98,15 @@ void Highlighter::setupFormats()
     d_formats.insert(parsing::HiglightingMarker::Kind::TERM, termFormat);
 
     QTextCharFormat variableNameFormat;
-    variableNameFormat.setForeground(QColor(0x8b, 0x41, 0xb1));
+    variableNameFormat.setForeground(QColor(0xf6, 0xc1, 0x77));
     d_formats.insert(parsing::HiglightingMarker::Kind::VARIABLE_NAME, variableNameFormat);
 
     QTextCharFormat functionNameFormat;
-    functionNameFormat.setForeground(QColor(0x4b, 0x69, 0xc6));
+    functionNameFormat.setForeground(QColor(0xeb, 0xbc, 0xba));
     d_formats.insert(parsing::HiglightingMarker::Kind::FUNCTION_NAME, functionNameFormat);
 
     QTextCharFormat keywordFormat;
-    keywordFormat.setForeground(QColor(0xd7, 0x3a, 0x49));
+    keywordFormat.setForeground(QColor(0x31, 0x74, 0x8f));
     d_formats.insert(parsing::HiglightingMarker::Kind::KEYWORD, keywordFormat);
 
     d_misspelledWordFormat.setFontUnderline(true);

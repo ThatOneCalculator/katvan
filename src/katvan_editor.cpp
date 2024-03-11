@@ -75,7 +75,7 @@ Editor::Editor(QWidget* parent)
     d_highlighter = new Highlighter(document(), d_spellChecker);
 
     d_leftLineNumberGutter = new LineNumberGutter(this);
-    d_rightLineNumberGutter = new LineNumberGutter(this);
+    // d_rightLineNumberGutter = new LineNumberGutter(this);
 
     connect(document(), &QTextDocument::blockCountChanged, this, &Editor::updateLineNumberGutterWidth);
     connect(verticalScrollBar(), &QScrollBar::valueChanged, this, &Editor::updateLineNumberGutters);
@@ -266,10 +266,10 @@ void Editor::resizeEvent(QResizeEvent* event)
 
     if (layoutDirection() == Qt::LeftToRight) {
         d_leftLineNumberGutter->setGeometry(QRect(cr.left(), cr.top(), gutterWidth, cr.height()));
-        d_rightLineNumberGutter->setGeometry(QRect(cr.right() - gutterWidth - verticalScrollBarWidth, cr.top(), gutterWidth, cr.height()));
+        // d_rightLineNumberGutter->setGeometry(QRect(cr.right() - gutterWidth - verticalScrollBarWidth, cr.top(), gutterWidth, cr.height()));
     }
     else {
-        d_rightLineNumberGutter->setGeometry(QRect(cr.left() + verticalScrollBarWidth, cr.top(), gutterWidth, cr.height()));
+        // d_rightLineNumberGutter->setGeometry(QRect(cr.left() + verticalScrollBarWidth, cr.top(), gutterWidth, cr.height()));
         d_leftLineNumberGutter->setGeometry(QRect(cr.right() - gutterWidth, cr.top(), gutterWidth, cr.height()));
     }
 }
@@ -382,14 +382,14 @@ void Editor::updateLineNumberGutters()
 {
     QRect cr = contentsRect();
     d_leftLineNumberGutter->update(0, cr.y(), d_leftLineNumberGutter->width(), cr.height());
-    d_rightLineNumberGutter->update(0, cr.y(), d_rightLineNumberGutter->width(), cr.height());
+    // d_rightLineNumberGutter->update(0, cr.y(), d_rightLineNumberGutter->width(), cr.height());
 
     updateLineNumberGutterWidth();
 
     int dy = verticalScrollBar()->sliderPosition();
     if (dy >= 0) {
         d_leftLineNumberGutter->scroll(0, dy);
-        d_rightLineNumberGutter->scroll(0, dy);
+        // d_rightLineNumberGutter->scroll(0, dy);
     }
 }
 
@@ -414,8 +414,8 @@ QTextBlock Editor::getFirstVisibleBlock()
 
 void Editor::lineNumberGutterPaintEvent(QWidget* gutter, QPaintEvent* event)
 {
-    QColor bgColor(Qt::lightGray);
-    QColor fgColor(120, 120, 120);
+    QColor bgColor(38,35,58);
+    QColor fgColor(144,140,170);
 
     QPainter painter(gutter);
     painter.fillRect(event->rect(), bgColor);
